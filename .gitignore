@@ -1,2 +1,5 @@
 code/
 output/
+venv2/
+venv/
+/venv2/
