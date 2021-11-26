@@ -1,0 +1,123 @@
+% HEADER Section
+% Define formal of the paper
+\documentclass[sigconf]{acmart}
+\setcopyright{none} % Remove the 
+\settopmatter{printacmref=false} % Removes citation information below abstract
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+\pagestyle{plain} % removes running headers
+\setlength{\marginparwidth}{2cm}
+\usepackage{outlines} % item and sub items 
+\usepackage{pifont} %provides additiona symbols
+
+
+%% Include packages 
+% \usepackage[style=ACM-Reference-Format,backend=bibtex,sorting=none]{biblatex}
+% \addbibresource{ref.bib}
+\usepackage{lipsum}% for dummy text
+\usepackage[parfill]{parskip} % create space between paragraph
+\fancyfoot{}
+\usepackage{booktabs} % For formal tables
+\usepackage{multirow}
+\usepackage{subcaption}
+
+% package for drawing flowchart 
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usepackage{caption}  
+
+% package for to do 
+\usepackage{xcolor}
+\newcommand\mytodo[1]{\textcolor{red}{#1}}
+\usepackage{todonotes}
+
+% packages for pseudo code 
+% \usepackage{algorithm} 
+% \usepackage[noend]{algpseudocode}
+% \usepackage{algpseudocode}
+\usepackage{algcompatible}
+\usepackage[noend, ruled,lined]{algorithm2e}
+
+% Drawing figure with tikz package
+\usepackage{tikz}
+\usetikzlibrary{positioning, shapes}
+
+
+
+%table 
+\usepackage{multirow}
+
+\newcommand\MyBox[2]{
+  \fbox{\lower0.75cm
+    \vbox to 1.7cm{\vfil
+      \hbox to 1.7cm{\hfil\parbox{1.4cm}{#1\\#2}\hfil}
+      \vfil}%
+  }%
+}
+
+
+%% Author Information 
+\title{Eagle Eye: Trade Fraud Detection Using Machine Learning Techniques}
+\author{Asif Anwar (2660561)}
+\affiliation{%
+  \institution{Vrije Universiteit}
+  \streetaddress{ De Boelelaan 1105}
+  \city{Amsterdam} 
+  \country{The Netherlands} 
+  \postcode{1081 HV}
+  }
+\email{a.anwar@student.vu.nl}
+
+
+% Main report 
+
+\begin{document}
+
+
+
+\input{titlepage}
+
+\newpage
+    \thispagestyle{empty}
+    \tableofcontents
+\newpage
+
+\input{abstract}
+\keywords{Fraud Detection, Machine Learning, SOMTEC, Data Mining}
+
+\maketitle
+\pagestyle{plain}
+\balance
+
+% Include Sections 
+\section{Introduction}
+\input{sections/01_introduction}
+\section{Background}
+\input{sections/02_background}
+\section{Related Work}
+\input{sections/03_related_work}
+\section{Overview}
+\input{sections/04_overview}
+\section{Design}
+\input{sections/05_design}
+\section{Evaluation}
+\input{sections/06_evaluation}
+\section{Discussion}
+\input{sections/07_discussion}
+\section{Conclusion}
+\input{sections/08_conclusion}
+\section{Future Work}
+\input{sections/09_future_work}
+
+
+\newpage
+\appendix
+\section{Appendix}
+\input{appendix}
+
+
+\newpage
+% \addcontentsline{toc}{section}{References}
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{ref.bib}
+
+\end{document}

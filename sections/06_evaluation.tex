@@ -1,0 +1,36 @@
+Discuss the design of your experiments, the results you obtained,and how they help in evaluating the claims you made in the introduction. You may also use the evaluation results in this section to justify your design choices or assess the contributions of different aspects of your design towards the overall goals.
+
+
+% \begin{figure}[H]
+%   \centering
+%   \begin{tikzpicture}
+%     \draw circle (1);
+%   \end{tikzpicture}
+%   \caption{Figure in two column}
+% \end{figure}
+
+According to results shown in [] AUC values are stable or increased using class imbalanced and data driven method. 
+
+\mytodo{show figure for AUC curve}
+
+
+\begin{table}[h]
+\begin{tabular}{@{}|l|l|l|l|l|l|@{}}
+\toprule
+\textbf{PCA} & \textbf{SMOTE} & \textbf{Model} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} \\ \midrule
+\multirow{6}{*}{No}  & \multirow{3}{*}{No}  & \textbf{RF} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
+                     &                      & \textbf{XD} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
+                     &                      & \textbf{NN} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){2-6} 
+                     & \multirow{3}{*}{Yes} & \textbf{RF} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
+                     &                      & \textbf{XD} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
+                     &                      & \textbf{NN} & 0.0000 & 0.0000 & 0.0000 \\ \midrule
+\multirow{6}{*}{Yes} & \multirow{3}{*}{No}  & \textbf{RF} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
+                     &                      & \textbf{XD} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
+                     &                      & \textbf{NN} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){2-6} 
+                     & \multirow{3}{*}{Yes} & \textbf{RF} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
+                     &                      & \textbf{XD} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
+                     &                      & \textbf{NN} & 0.0000 & 0.0000 & 0.0000 \\ \bottomrule
+\end{tabular}
+\caption{Model performance over test set}
+\label{tab:model performance}
+\end{table}

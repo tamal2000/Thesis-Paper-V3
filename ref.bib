@@ -1,0 +1,371 @@
+% sampling method 
+@article{2002,
+    title={SMOTE: Synthetic Minority Over-sampling Technique},
+    volume={16},
+    ISSN={1076-9757},
+    url={http://dx.doi.org/10.1613/jair.953},
+    DOI={10.1613/jair.953},
+    journal={Journal of Artificial Intelligence Research},
+    publisher={AI Access Foundation},
+    author={Chawla, N. V. and Bowyer, K. W. and Hall, L. O. and Kegelmeyer, W. P.},
+    year={2002},
+    month={06},
+    pages={321–357}
+}
+@inproceedings{10.1145/3055635.3056643,
+    author = {Junsomboon, Nutthaporn and Phienthrakul, Tanasanee},
+    title = {Combining Over-Sampling and Under-Sampling Techniques for Imbalance Dataset},
+    year = {2017},
+    isbn = {9781450348171},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3055635.3056643},
+    doi = {10.1145/3055635.3056643},
+    abstract = {An important problem in medical data analysis is imbalance dataset. This problem is a cause of diagnostic mistake. The results of diagnostic affect to life of patients. If a doctor fails in diagnostic of patient who have disease that means he cannot treat patient in timely. However, the problem can be easily solved by adding or removing the data to closely balance for performance of diagnostic in medically. This paper proposed a solution to adjust imbalance dataset by combining Neighbor Cleaning Rule (NCL) and Synthetic Minority Over-Sampling Technique (SMOTE) techniques. The process of work is using NCL technique for removing sample data that are outliers in majority class and SMOTE technique is used for increasing sample data in minority class to closely balance dataset. After that, the balanced medical dataset is classified by Naive Bayes, SMO and KNN algorithm. The experimental results show that the recall rate can be improved from the models that were created from balanced dataset.},
+    booktitle = {Proceedings of the 9th International Conference on Machine Learning and Computing},
+    pages = {243–247},
+    numpages = {5},
+    keywords = {Data Mining, Imbalance Dataset, NCL, SMOTE, Medical Data, Classification},
+    location = {Singapore, Singapore},
+    series = {ICMLC 2017}
+}
+
+% Models 
+@Inbook{Fürnkranz2010,
+    author="F{\"u}rnkranz, Johannes",
+    editor="Sammut, Claude
+    and Webb, Geoffrey I.",
+    title="Decision Tree",
+    bookTitle="Encyclopedia of Machine Learning",
+    year="2010",
+    publisher="Springer US",
+    address="Boston, MA",
+    pages="263--267",
+    isbn="978-0-387-30164-8",
+    doi="10.1007/978-0-387-30164-8_204",
+    url="https://doi.org/10.1007/978-0-387-30164-8_204"
+}
+
+% Random Forest 
+@article{breiman2001random,
+  abstract = {Random forests are a combination of tree predictors such that each tree depends on the values of a random vector sampled independently and with the same distribution for all trees in the forest. The generalization error for forests converges a.s. to a limit as the number of trees in the forest becomes large. The generalization error of a forest of tree classifiers depends on the strength of the individual trees in the forest and the correlation between them. Using a random selection of features to split each node yields error rates that compare favorably to },
+  added-at = {2015-04-15T08:57:31.000+0200},
+  author = {Breiman, Leo},
+  biburl = {https://www.bibsonomy.org/bibtex/2b8187107bf870043f2f93669958858f1/kdepublication},
+  description = {Random Forests - Springer},
+  doi = {10.1023/A:1010933404324},
+  interhash = {4450d2e56555e7cb8f3817578e1dd4da},
+  intrahash = {b8187107bf870043f2f93669958858f1},
+  issn = {0885-6125},
+  journal = {Machine Learning},
+  keywords = {classification classifier dblp decision ensemble final forest forests imported kde learning machine ml mykopie origin random text-detection the_youtube_social_network thema:exploiting_place_features_in_link_prediction_on_location-based_social_networks trees uw_ss14_web2.0},
+  language = {English},
+  number = 1,
+  pages = {5-32},
+  publisher = {Kluwer Academic Publishers},
+  timestamp = {2015-04-24T14:37:24.000+0200},
+  title = {Random Forests},
+  url = {http://dx.doi.org/10.1023/A%3A1010933404324},
+  volume = 45,
+  year = 2001
+}
+
+% XGBooset 
+@inproceedings{Chen:2016:XST:2939672.2939785,
+ author = {Chen, Tianqi and Guestrin, Carlos},
+ title = {{XGBoost}: A Scalable Tree Boosting System},
+ booktitle = {Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+ series = {KDD '16},
+ year = {2016},
+ isbn = {978-1-4503-4232-2},
+ location = {San Francisco, California, USA},
+ pages = {785--794},
+ numpages = {10},
+ url = {http://doi.acm.org/10.1145/2939672.2939785},
+ doi = {10.1145/2939672.2939785},
+ acmid = {2939785},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {large-scale machine learning},
+}
+
+% ML Tools 
+% AUC
+@inproceedings{davis06,
+  abstract = {Receiver Operator Characteristic (ROC) curves are commonly used to present results for binary decision problems in machine learning. However, when dealing with highly skewed datasets, Precision-Recall (PR) curves give a more informative picture of an algorithm's performance. We show that a deep connection exists between ROC space and PR space, such that a curve dominates in ROC space if and only if it dominates in PR space. A corollary is the notion of an achievable PR curve, which has properties much like the convex hull in ROC space; we show an efficient algorithm for computing this curve. Finally, we also note differences in the two types of curves are significant for algorithm design. For example, in PR space it is incorrect to linearly interpolate between points. Furthermore, algorithms that optimize the area under the ROC curve are not guaranteed to optimize the area under the PR curve.},
+  added-at = {2011-12-07T11:15:34.000+0100},
+  address = {New York, NY, USA},
+  author = {Davis, Jesse and Goadrich, Mark},
+  biburl = {https://www.bibsonomy.org/bibtex/2576166847a9527bdf0a0279a3e82b849/sangarbl},
+  booktitle = {ICML '06: Proceedings of the 23rd international conference on Machine learning},
+  description = {The relationship between Precision-Recall and ROC curves},
+  doi = {http://doi.acm.org/10.1145/1143844.1143874},
+  interhash = {e4ea92aea3ff8bbb3eb04c64867505f2},
+  intrahash = {576166847a9527bdf0a0279a3e82b849},
+  isbn = {1-59593-383-2},
+  keywords = {thesis},
+  location = {Pittsburgh, Pennsylvania},
+  pages = {233--240},
+  publisher = {ACM},
+  timestamp = {2011-12-07T11:15:34.000+0100},
+  title = {{The Relationship Between Precision-Recall and ROC Curves}},
+  url = {http://portal.acm.org/citation.cfm?id=1143874},
+  year = 2006
+}
+
+
+@article{FAWCETT2006861,
+  abstract = {Receiver operating characteristics (ROC) graphs are useful for organizing classifiers and visualizing their performance. ROC graphs are commonly used in medical decision making, and in recent years have been used increasingly in machine learning and data mining research. Although ROC graphs are apparently simple, there are some common misconceptions and pitfalls when using them in practice. The purpose of this article is to serve as an introduction to ROC graphs and as a guide for using them in research.},
+  added-at = {2021-06-25T07:03:05.000+0200},
+  author = {Fawcett, Tom},
+  biburl = {https://www.bibsonomy.org/bibtex/2044a6a9838ad0752ecb3faae95efd20c/michan},
+  doi = {https://doi.org/10.1016/j.patrec.2005.10.010},
+  interhash = {c0a67ba4f0a0aa01a0f56f338b8211d9},
+  intrahash = {044a6a9838ad0752ecb3faae95efd20c},
+  issn = {0167-8655},
+  journal = {Pattern Recognition Letters},
+  keywords = {},
+  note = {ROC Analysis in Pattern Recognition},
+  number = 8,
+  pages = {861-874},
+  timestamp = {2021-06-25T07:03:05.000+0200},
+  title = {An introduction to ROC analysis},
+  url = {https://www.sciencedirect.com/science/article/pii/S016786550500303X},
+  volume = 27,
+  year = 2006
+}
+% Confusion matrix 
+@Inbook{Ting2017,
+    author="Ting, Kai Ming",
+    title="Confusion Matrix",
+    bookTitle="Encyclopedia of Machine Learning and Data Mining",
+    year="2017",
+    publisher="Springer US",
+    address="Boston, MA",
+    pages="260--260",
+    isbn="978-1-4899-7687-1",
+    doi="10.1007/978-1-4899-7687-1_50",
+    url="https://doi.org/10.1007/978-1-4899-7687-1_50"
+}
+
+
+@Book{GoodBengCour16,
+  Title                    = {Deep Learning},
+  Author                   = {Ian J. Goodfellow and Yoshua Bengio and Aaron Courville},
+  Publisher                = {MIT Press},
+  Year                     = {2016},
+
+  Address                  = {Cambridge, MA, USA},
+  Note                     = {\url{http://www.deeplearningbook.org}}
+}
+
+@Article{RB2021,
+    author={RB, Asha
+    and KR, Suresh Kumar},
+    title={Credit card fraud detection using artificial neural network},
+    journal={Global Transitions Proceedings},
+    year={2021},
+    volume={2},
+    number={1},
+    pages={35-41},
+    note={35},
+    issn={2666-285X},
+    doi={10.1016/j.gltp.2021.01.006},
+    url={https://doi.org/10.1016/j.gltp.2021.01.006}
+}
+
+@Inbook{Cristianini2008,
+    author="Cristianini, Nello
+    and Ricci, Elisa",
+    title="Support Vector Machines",
+    bookTitle="Encyclopedia of Algorithms",
+    year="2008",
+    publisher="Springer US",
+    address="Boston, MA",
+    pages="928--932",
+    isbn="978-0-387-30162-4",
+    doi="10.1007/978-0-387-30162-4_415",
+    url="https://doi.org/10.1007/978-0-387-30162-4_415"
+}
+
+@Inbook{Mucherino2009,
+    author="Mucherino, Antonio
+    and Papajorgji, Petraq J.
+    and Pardalos, Panos M.",
+    title="k-Nearest Neighbor Classification",
+    bookTitle="Data Mining in Agriculture",
+    year="2009",
+    publisher="Springer New York",
+    address="New York, NY",
+    pages="83--106",
+    abstract="The k-nearest neighbor (k-NN) method is one of the data mining techniques considered to be among the top 10 techniques for data mining [237]. The k-NN method uses the well-known principle of Cicero pares cum paribus facillime congregantur (birds of a feather flock together or literally equals with equals easily associate). It tries to classify an unknown sample based on the known classification of its neighbors. Let us suppose that a set of samples with known classification is available, the so-called training set. Intuitively, each sample should be classified similarly to its surrounding samples. Therefore, if the classification of a sample is unknown, then it could be predicted by considering the classification of its nearest neighbor samples. Given an unknown sample and a training set, all the distances between the unknown sample and all the samples in the training set can be computed. The distance with the smallest value corresponds to the sample in the training set closest to the unknown sample. Therefore, the unknown sample may be classified based on the classification of this nearest neighbor.",
+    isbn="978-0-387-88615-2",
+    doi="10.1007/978-0-387-88615-2_4",
+    url="https://doi.org/10.1007/978-0-387-88615-2_4"
+}
+
+@misc{ando2017deep,
+    title={Deep Over-sampling Framework for Classifying Imbalanced Data},
+    author={Shin Ando and Chun-Yuan Huang},
+    year={2017},
+    eprint={1704.07515},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG}
+}
+
+@Article{Yamashita2018,
+    author={Yamashita, Rikiya
+    and Nishio, Mizuho
+    and Do, Richard Kinh Gian
+    and Togashi, Kaori},
+    title={Convolutional neural networks: an overview and application in radiology},
+    journal={Insights into Imaging},
+    year={2018},
+    month={08},
+    day={01},
+    volume={9},
+    number={4},
+    pages={611-629},
+    abstract={Convolutional neural network (CNN), a class of artificial neural networks that has become dominant in various computer vision tasks, is attracting interest across a variety of domains, including radiology. CNN is designed to automatically and adaptively learn spatial hierarchies of features through backpropagation by using multiple building blocks, such as convolution layers, pooling layers, and fully connected layers. This review article offers a perspective on the basic concepts of CNN and its application to various radiological tasks, and discusses its challenges and future directions in the field of radiology. Two challenges in applying CNN to radiological tasks, small dataset and overfitting, will also be covered in this article, as well as techniques to minimize them. Being familiar with the concepts and advantages, as well as limitations, of CNN is essential to leverage its potential in diagnostic radiology, with the goal of augmenting the performance of radiologists and improving patient care.},
+    issn={1869-4101},
+    doi={10.1007/s13244-018-0639-9},
+    url={https://doi.org/10.1007/s13244-018-0639-9}
+}
+
+@article{KIRKOS2007995,
+    title = {Data Mining techniques for the detection of fraudulent financial statements},
+    journal = {Expert Systems with Applications},
+    volume = {32},
+    number = {4},
+    pages = {995-1003},
+    year = {2007},
+    issn = {0957-4174},
+    doi = {https://doi.org/10.1016/j.eswa.2006.02.016},
+    url = {https://www.sciencedirect.com/science/article/pii/S0957417406000765},
+    author = {Efstathios Kirkos and Charalambos Spathis and Yannis Manolopoulos},
+    keywords = {Fraudulent financial statements, Management fraud, Data Mining, Auditing, Greece},
+    abstract = {This paper explores the effectiveness of Data Mining (DM) classification techniques in detecting firms that issue fraudulent financial statements (FFS) and deals with the identification of factors associated to FFS. In accomplishing the task of management fraud detection, auditors could be facilitated in their work by using Data Mining techniques. This study investigates the usefulness of Decision Trees, Neural Networks and Bayesian Belief Networks in the identification of fraudulent financial statements. The input vector is composed of ratios derived from financial statements. The three models are compared in terms of their performances.}
+}
+
+% ref 16
+@Article{Severino2021,
+    author={Severino, Matheus Kempa
+    and Peng, Yaohao},
+    title={Machine learning algorithms for fraud prediction in property insurance: Empirical evidence using real-world microdata},
+    journal={Machine Learning with Applications},
+    year={2021},
+    volume={5},
+    issn={2666-8270},
+    doi={10.1016/j.mlwa.2021.100074},
+    url={https://doi.org/10.1016/j.mlwa.2021.100074}
+}
+
+% Source from paper 31
+\subsection{Model Selection}
+\subsubsection{Random Forest:}
+The random forest algorithm is 
+The random forest algorithm is used for classification and regression analysis. Random forest algorithm is a complication of decision tree classifiers.\cite{breiman2001random} The random forest has many advantages over decision tree as e.g. it rectifies the problems of over-fitting and under-fitting for the training set. A sub-division of the training data set is sampled arbitrarily for the purpose of the providing training to every individual tree and then a decision tree is constructed. Each node is separated on the basis of feature selected from a randomly selected subset of the full feature set. Random Forest algorithm provides a superior quality estimate of the generalisation error in detecting suspicious companies. 
+\subsubsection{XD-Boost}
+\subsubsection{Bayesian Network}
+\subsubsection{Neural Network}
+
+% ref 43
+@inproceedings{10.1145/3414274.3414278,
+    author = {Wang, Wan and Liu, Xinglu and Chan, Wai Kin Victor},
+    title = {Imbalanced Classification Problem Using Data-Driven and Random Forest Method},
+    year = {2020},
+    isbn = {9781450376044},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3414274.3414278},
+    doi = {10.1145/3414274.3414278},
+    abstract = {Classification problem is a major concern in numerous domains, for instance, customer
+    retaining problem on electronic devices, rare disease diagnosis, bank fraud identification
+    etc. Accurate and efficient classification approaches can reduce operation cost of
+    companies and thus save a mass of artificial work significantly. Identifying the potential
+    targets and then put promotion strategy to customers in order to achieve considerable
+    improvement has become a critical objective in a range of institutions. Nevertheless,
+    missing values and some statistical errors are always involved in the majority of
+    datasets. Besides, the available datasets usually tend to be imbalanced, which leads
+    to weak performance of the classification model. Though random forest method is widely
+    adopted in prediction problem, few of them introduce data-driven technique in this
+    problem. In th is work, firstly, a data-driven method is applied to generate new features
+    based on the imbalanced datasets. Then, the prediction is executed by Random Forest(RF)
+    algorithm on three open-sourced datasets. Results reveal that random forest combined
+    with data-driven method improved the prediction accuracy. The AUC values also perform
+    well stable and even increased. Our main contributions are: We consider two-class
+    classification problem and employ a data-driven method to generate new features, which
+    can raise the correlation of the features and increase the accuracy without losing
+    original information meanwhile. 2. We use random forest coupled with a data-driven
+    method, and consider imbalanced condition in our test which are more reasonable in
+    real world applications, which can provide a general idea and direction in the industry.},
+    booktitle = {Proceedings of the 3rd International Conference on Data Science and Information Technology},
+    pages = {26–30},
+    numpages = {5},
+    keywords = {accuracy, Data-driven, imbalanced dataset, Random Forest},
+    location = {Xiamen, China},
+    series = {DSIT 2020}
+}
+
+% ref 2
+﻿@Article{Mishra2021,
+    author={Mishra, Kamta Nath
+    and Pandey, Subhash Chandra},
+    title={Fraud Prediction in Smart Societies Using Logistic Regression and k-fold Machine Learning Techniques},
+    journal={Wireless Personal Communications},
+    year={2021},
+    month={Jul},
+    day={01},
+    volume={119},
+    number={2},
+    pages={1341-1367},
+    abstract={The credit/debit card deceit detection is an enormously difficult task. However, it is a well known problem of our cloud based mobile internet society and it must be solved by technocrats in the welfare of societal mental harassments. The main problem in executing credit/debit card fraud detection technique is the availability of limited amount of fraud related data like transaction amount, transaction date, transaction time, address, and vendor category code related to the frauds. It is the truth of mobile internet world that there are billions of potential places and e-commerce websites where a credit/debit card can be used by fraudulent people for online transactions and payments which make it exceedingly thorny to trace the pattern of frauds. Moreover, the problem of fraud detection in cloud--- Internet of Things (IoT) based smart societies has numerous constraints like continuous change in the behavior of normal and fraudulent persons, the fraudulent people try to develop and use new method for executing frauds, and very little availability of frauds related bench mark data sets. In this research article, the authors have presented logistic regression based k-fold machine learning technique (MLT) for fraud detection and prevention in cloud-IoT based smart societal environment. The k-fold method creates multiple folds of bank transactions related data before implementing logistic regression and MLT. The logistic regression performs logic based regression analysis and the intelligent machine learning approach performs registration, classification, clustering, dimensionality reduction, deep learning, training, and reinforcement learning steps on the received bank transactions data. The implementation of proposed methodology and its further analysis using intelligent machine learning tools like ROC (Receiver Operating Characteristic) curve, confusion matrix, mean-recall score value, and precision recall curves for European banks day-to-day transactions related bench mark data set reveal that the proposed methodology is efficient, accurate, and reliable for detecting frauds in cloud-IoT based smart societal environment.},
+    issn={1572-834X},
+    doi={10.1007/s11277-021-08283-9},
+    url={https://doi.org/10.1007/s11277-021-08283-9}
+}
+
+% ref 44
+@article{SMARRA20181252,
+    title = {Data-driven model predictive control using random forests for building energy optimization and climate control},
+    journal = {Applied Energy},
+    volume = {226},
+    pages = {1252-1272},
+    year = {2018},
+    issn = {0306-2619},
+    doi = {https://doi.org/10.1016/j.apenergy.2018.02.126},
+    url = {https://www.sciencedirect.com/science/article/pii/S0306261918302575},
+    author = {Francesco Smarra and Achin Jain and Tullio {de Rubeis} and Dario Ambrosini and Alessandro D’Innocenzo and Rahul Mangharam},
+    keywords = {Building control, Energy optimization, Demand response, Machine learning, Random forests, Receding horizon control},
+    abstract = {Model Predictive Control (MPC) is a model-based technique widely and successfully used over the past years to improve control systems performance. A key factor prohibiting the widespread adoption of MPC for complex systems such as buildings is related to the difficulties (cost, time and effort) associated with the identification of a predictive model of a building. To overcome this problem, we introduce a novel idea for predictive control based on historical building data leveraging machine learning algorithms like regression trees and random forests. We call this approach Data-driven model Predictive Control (DPC), and we apply it to three different case studies to demonstrate its performance, scalability and robustness. In the first case study we consider a benchmark MPC controller using a bilinear building model, then we apply DPC to a data-set simulated from such bilinear model and derive a controller based only on the data. Our results demonstrate that DPC can provide comparable performance with respect to MPC applied to a perfectly known mathematical model. In the second case study we apply DPC to a 6 story 22 zone building model in EnergyPlus, for which model-based control is not economical and practical due to extreme complexity, and address a Demand Response problem. Our results demonstrate scalability and efficiency of DPC showing that DPC provides the desired power curtailment with an average error of 3. In the third case study we implement and test DPC on real data from an off-grid house located in L’Aquila, Italy. We compare the total amount of energy saved with respect to the classical bang-bang controller, showing that we can perform an energy saving up to 49.2. Our results demonstrate robustness of our method to uncertainties both in real data acquisition and weather forecast.}
+}
+
+% ref 45
+@article{Valecha2018PredictionOC,
+  title={Prediction of Consumer Behaviour using Random Forest Algorithm},
+  author={Harsh Valecha and Aparna J. Varma and Ishita Khare and Aakash Sachdeva and Mukta Goyal},
+  journal={2018 5th IEEE Uttar Pradesh Section International Conference on Electrical, Electronics and Computer Engineering (UPCON)},
+  year={2018},
+  pages={1-6}, 
+  VOLUME = {1}
+}
+
+% 42 
+
+@Article{computers10100121,
+    AUTHOR = {Sánchez-Aguayo, Marco and Urquiza-Aguiar, Luis and Estrada-Jiménez, José},
+    TITLE = {Fraud Detection Using the Fraud Triangle Theory and Data Mining Techniques: A Literature Review},
+    JOURNAL = {Computers},
+    VOLUME = {10},
+    YEAR = {2021},
+    NUMBER = {10},
+    pages ={},
+    ARTICLE-NUMBER = {121},
+    URL = {https://www.mdpi.com/2073-431X/10/10/121},
+    ISSN = {2073-431X},
+    ABSTRACT = {Fraud entails deception in order to obtain illegal gains; thus, it is mainly evidenced within financial institutions and is a matter of general interest. The problem is particularly complex, since perpetrators of fraud could belong to any position, from top managers to payroll employees. Fraud detection has traditionally been performed by auditors, who mainly employ manual techniques. These could take too long to process fraud-related evidence. Data mining, machine learning, and, as of recently, deep learning strategies are being used to automate this type of processing. Many related techniques have been developed to analyze, detect, and prevent fraud-related behavior, with the fraud triangle associated with the classic auditing model being one of the most important of these. This work aims to review current work related to fraud detection that uses the fraud triangle in addition to machine learning and deep learning techniques. We used the Kitchenham methodology to analyze the research works related to fraud detection from the last decade. This review provides evidence that fraud is an area of active investigation. Several works related to fraud detection using machine learning techniques were identified without the evidence that they incorporated the fraud triangle as a method for more efficient analysis.},
+    DOI = {10.3390/computers10100121}
+}
+
+
+
