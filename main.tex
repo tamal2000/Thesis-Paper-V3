@@ -1,18 +1,18 @@
 % HEADER Section
 % Define formal of the paper
-\documentclass[sigconf]{acmart}
+\documentclass[sigconf, natbib=false]{acmart}
 \setcopyright{none} % Remove the 
 \settopmatter{printacmref=false} % Removes citation information below abstract
 \renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
 \pagestyle{plain} % removes running headers
 \setlength{\marginparwidth}{2cm}
 \usepackage{outlines} % item and sub items 
-\usepackage{pifont} %provides additiona symbols
+\usepackage{pifont} %provides addition symbols
 
 
 %% Include packages 
-% \usepackage[style=ACM-Reference-Format,backend=bibtex,sorting=none]{biblatex}
-% \addbibresource{ref.bib}
+\usepackage[style=ACM-Reference-Format,backend=bibtex,sorting=none]{biblatex}
+\addbibresource{ref.bib}
 \usepackage{lipsum}% for dummy text
 \usepackage[parfill]{parskip} % create space between paragraph
 \fancyfoot{}
@@ -119,8 +119,10 @@
 
 
 \newpage
-% \addcontentsline{toc}{section}{References}
-\bibliographystyle{ACM-Reference-Format}
-\bibliography{ref.bib}
+\addcontentsline{toc}{section}{References}
+% \bibliographystyle{ACM-Reference-Format}
+% \bibliography{ref.bib}
+% \addbibresource{}
+\printbibliography
 
 \end{document}
