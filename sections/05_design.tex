@@ -110,7 +110,7 @@ below pseudo code structure [Algorithm :\ref{alg:feature}]is used to engineer fe
 
 \subsubsection{Exploratory data analysis}\hspace*{\fill} \\
 
-From the feature extraction and feature engineering stage we get the full data set. To prepare the dataset total last 10 years of data for all companies (having \mytodo{cla} date) are selected. Due to time complexity for data extraction and keep to understand only recent trend last 10 years data is considered. In the data set we can see the there are total 30 columns, however the number of features are 27. The total number of features are 48,549. Among this data only 1358 are marked fraudulent or suspicious company. The actual data is around 100k during this period. However to keep the data mining time low, the dataset size kept to 48,549. From the paper on SMOTE \cite{}, we have seen the under sampling with SMOTE performs re lately well. So theoretically the performance will still get improvement. 
+From the feature extraction and feature engineering stage we get the full data set. To prepare the dataset total last 10 years of data for all companies (having \mytodo{cla} date) are selected. Due to time complexity for data extraction and keep to understand only recent trend last 10 years data is considered. In the data set we can see the there are total 30 columns, however the number of features are 27. The total number of features are 48,549. Among this data only 1358 are marked fraudulent or suspicious company. The actual data is around 100k during this period. However to keep the data mining time low, the dataset size kept to 48,549. From the paper on SMOTE \cite{}, we have seen the under sampling with SMOTE performs re lately well. So theoretically the performance will still get improvement.
 \begin{itemize}
     \item Total number of columns: 30
     \item Number of company entries: 48,539
@@ -174,6 +174,22 @@ Random forest algorithm generally performs better compare with other classificat
 In our random forest,we set tree number to 200. We also use grid search method to set some ratio of the class weights and other related parameters to select the most suitable one with the highest accuracy. For example,the class weight selection process is shown in Fig.2. As the figure shows, when our weights equals to the ratio of 1:1 and 1:2, our accuracy perform best. Therefore, we set the class weight as 1:1 in the experiment.Also there are some other parameters we will not enumerate here but the process are the same. \mytodo{text needs to be updated}
 
 
+
+\textbf{Hyper-parameter tuning:}
+
+\begin{table}[h]
+    \begin{tabular}{llll}
+    Parameter           & Options         & No of options & Parameter details                                    \\
+    n\_estimator        & 200 to 2000     & 100           & Number of trees in random forest                     \\
+    max\_features       & Auto, sqrt      & 2             & Nuimber of features to consider at every split       \\
+    max\_depth          & None, 10 to 110 & 12            & Maximum number of levels in tree                     \\
+    min\_samples\_split & 2,5,10          & 3             & Minimum number of samples required to split a node   \\
+    min\_samples\_leaf  & 1,2,4           & 3             & Minimum number of samples required at each leaf node \\
+    bootstrap           & True, False     & 2             & Method of selecting samples for training each tree
+    \end{tabular}
+    \caption{Hyper-parameter settings for Random Forest}
+    \label{tab:RF_param}
+\end{table}
 
 
 \subsubsection{XDBoost}\hspace*{\fill} \\
