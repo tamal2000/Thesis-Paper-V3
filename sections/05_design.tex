@@ -175,16 +175,25 @@ In our random forest,we set tree number to 200. We also use grid search method t
 
 
 \textbf{Hyper-parameter tuning:}
+Random Forest classifiers comes with crucial parameters which needs to be tuned to get the best model. Below parameters are used in a random grid search method to do hyper parameter tuning for the random forest estimator. The options for each estimators are shown in the table: ~\ref{tab:RF_param}.
+\begin{itemize}
+    \item n\_estimator: Number of trees in random forest
+    \item max\_features: Number of features to consider at every split
+    \item max\_depth: Maximum number of levels in tree
+    \item min\_samples\_split: Minimum number of samples required to split a node
+    \item min\_sample\_leaf: Minimum number of samples required at each leaf node
+    \item bootstrap: Method of selecting samples for training each tree
+\end{itemize}
 
 \begin{table}[h]
     \begin{tabular}{llll}
     Parameter           & Options         & No of options & Parameter details                                    \\
-    n\_estimator        & 200 to 2000     & 100           & Number of trees in random forest                     \\
-    max\_features       & Auto, sqrt      & 2             & Nuimber of features to consider at every split       \\
-    max\_depth          & None, 10 to 110 & 12            & Maximum number of levels in tree                     \\
-    min\_samples\_split & 2,5,10          & 3             & Minimum number of samples required to split a node   \\
-    min\_samples\_leaf  & 1,2,4           & 3             & Minimum number of samples required at each leaf node \\
-    bootstrap           & True, False     & 2             & Method of selecting samples for training each tree
+    n\_estimator        & 200 to 2000     & 100           \\
+    max\_features       & Auto, sqrt      & 2             \\
+    max\_depth          & None, 10 to 110 & 12            \\
+    min\_samples\_split & 2,5,10          & 3              \\
+    min\_samples\_leaf  & 1,2,4           & 3              \\
+    bootstrap           & True, False     & 2              \\
     \end{tabular}
     \caption{Hyper-parameter settings for Random Forest}
     \label{tab:RF_param}
