@@ -6,6 +6,28 @@ The aim of this paper is to perform a data driven approach to extract relevant d
 
 For this paper, the a model focuses on identifying suspicious companies for Italian Market. Each country is fundamentally different in terms of trade credit policy. Hence, each country has its own internal process and method to identify the suspicious cases. To build the recommendation model below data driven machine learning strategies are used.
 
+\mytodo{update terms: buyers, client and provider}
+
+\subsection{Trade Credit Insurance}\label{subsec:trade-credit-insurance}
+In business world trade credit is a regular practice done by manufactures, suppliers, and service providers to protect their financial interest from any types of risks.\mytodo{find the total yearly trade credit amount}. Companies sales their products and goods on credit to their buyers. Generally this is a continues process as back to back trade deals and payment happens between the suppliers and buyers. However, the amount of trade credit is very high, hence suppliers like to protect their interest by taking credit polices from financial institutions  \mytodo{cite what is trade credit}.
+
+For financial institutions (credit insurance provider) ensures financial support to the supplier (client) in event of any mishaps. Trade credit is a risky business, hence before providing any insurance, financial institutions verifies both both supplier, sales, global economic conditions, external factors. As mentioned in section~\ref{sec: Intro}, due to the increased number of fraud cases, insurance providers have to also monitor fraudulent cases. Below are the types of fraud happens in the trade credit sector.
+
+\begin{itemize}
+    \item \textbf{Buyers Fraud:} When the buyers of the goods and products get benefited by not paying the dues to the suppliers.
+    \item \textbf{Client Fraud:} When the clients of the insurance company, suppliers try to gain benefit by doing insurance fraud.
+    \item \textbf{Joint Fraud:} When the suppliers and buyers cooperate another do conduct insurance fraud.
+    \item \textbf{Internal Fraud:} When internal parties from the insurance company colludes with the client and conduct an insurance fraud.
+\end{itemize}
+
+In this study we will mainly focus on finding the suspicious buyers to prevent economic mishaps to protect the suppliers and the insurance companies from financial loss.
+
+
+\subsection{Monitor Credit Policy}\label{subsec:monitor-credit-policy}
+
+
+In the the figure~\ref{fig:trade_credit}, the process of trade credit issuance is shown.
+
 \begin{figure}[htp]
     \centering
     \includegraphics[width=\linewidth]{figures/monitor_buyers.jpg}
@@ -13,13 +35,9 @@ For this paper, the a model focuses on identifying suspicious companies for Ital
     \label{fig:trade_credit}
 \end{figure}
 
-A joint data-driven technique and machine learning algorithms approach are used in this work for this classification task. Before the classification step, number of new features are generated or engineered from the internal company data. the insight from the experts are considered first, then from the historical reports the data driven method was used to prepare a dataset to train the desired model. Based on statistical correlation the important features are selected as final features to train various Ensemble models and artificial neural networks are used to get the best out come. \mytodo{refer the the three step flow}
+\subsubsection{Traditional Approach}
 
-Firs step of data driven approach is to apply the theory of change. As per the theory of change we can find the road map for how to get company information which are most useful. This method also help to find how to archive long time goals along with indicator for improve and track progress. Then its important to get in touch with internal experts to understand what sort of data they are using for daily tasks.
+\subsubsection{Machine learning base Approach}
 
-Generally the classifiers perform quite weak due to missing values and imbalance dataset for real life scenarios. The one of the major reason for the missing data is the collected data does not contain enough information, because of he statistical error or some missing values. To obtain more hidden
-information, data-driven method generally is a good choice. In the data driven approach hidden features can be found based on feedback from expert
-
-Data-driven decision making means getting the right data to the right model to the right time to improve the model for problem solving. This approach can help the organisation to identify and apply recent trend in data to apply it for finding solutions. 
 
 

@@ -17,11 +17,9 @@
 \usepackage[parfill]{parskip} % create space between paragraph
 \fancyfoot{}
 \usepackage{booktabs} % For formal tables
-\usepackage{multirow}
 \usepackage{subcaption}
 
 % package for drawing flowchart 
-\usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
 \usepackage{caption}  
 
@@ -45,6 +43,7 @@
 
 %table 
 \usepackage{multirow}
+\usepackage{graphicx}
 
 \newcommand\MyBox[2]{
   \fbox{\lower0.75cm
@@ -96,7 +95,7 @@
 \input{sections/01_introduction}
 \section{Background} \label{sec: background}
 \input{sections/02_background}
-\section{Related Work}
+\section{Related Work}\label{sec:related-work}
 \input{sections/03_related_work} \label{sec: related work}
 \section{Overview}\label{sec: Overview}
 \input{sections/04_overview}
@@ -108,13 +107,13 @@
 \input{sections/07_discussion}
 \section{Conclusion}\label{sec: conclusion}
 \input{sections/08_conclusion}
-\section{Future Work}
+\section{Future Work}\label{sec:future-work}
 \input{sections/09_future_work}
 
 
 \newpage
 \appendix
-\section{Appendix}
+\section{Appendix}\label{sec:appendix}
 \input{appendix}
 
 
