@@ -1,5 +1,9 @@
-This section provides a high-level outline of the proposed system or solution. It typically illustrates the system architecture or the interactions between the different solution components (via a “boxes-and-arrows” diagram) from a user’s perspective.
+% This section provides a high-level outline of the proposed system or solution. It typically illustrates the system architecture or the interactions between the different solution components (via a “boxes-and-arrows” diagram) from a user’s perspective.
 
+\mytodo{intro chapter on Overall design}
+
+\subsection{Proposed architect}\label{subsec:propsed-architech}
+\mytodo{fill architect section}
 \begin{figure}[htp]
     \centering
     \includegraphics[width=\linewidth]{figures/overall_design.PNG}
@@ -7,7 +11,9 @@ This section provides a high-level outline of the proposed system or solution. I
     \label{fig:design}
 \end{figure}
 
-\subsection{Imbalance Class Problem}
+\mytodo{highlight the coverage in this paper}
+
+\subsection{Imbalance Class Problem}\label{subsec:imbalance-class-problem}
 Training classification model using imbalance data set generally leads to bias to predict one sample from another. Considering the fraudulent or suspicious number of companies are so less, the training data set for fraud detection is highly imbalanced. Before training the classifier, the data set can be fixed by using below sampling methods.    
 \subsubsection{Under-sampling:}\hspace*{\fill} \\
 Under sampling is one of the common and basic method of sampling to reduce class biases \cite{10.1145/3055635.3056643}. In this method a selective number of (generally equal number of smaller class data) samples are taken from large class. The samples are randomly taken and number of instances are based on minority class. This method provide the smaller dataset than the actual one as the number of instances for majority class reduces dramatically. 
@@ -21,9 +27,9 @@ SMOTE is a synthetic over sampling method \cite{2002}. SMOTE drastically improve
 In the combined sampling method two or more samplings method are used in the same data set \cite{10.1145/3055635.3056643}. Under and over sampling is a common approach. In this method the under-sampling of majority class and over-sampling of minority class are done to prepare the Dataset. Another suitable method is to under-sample the majority class and synthetic sampling minority class. 
 
 % Source from paper 31
-\subsection{Model Selection}
+\subsection{Model Selection}\label{subsec:model-selection}
 
-\subsection{ensemble learning}\hspace*{\fill} \\
+\subsection{Ensemble learning}\label{subsec:ensemble-learning}\hspace*{\fill} \\
 As they use a collection of results to make a final decision, they are referred to as ensemble techniques.
 \mytodo{small about ensemble learning}
 
@@ -139,7 +145,8 @@ As they use a collection of results to make a final decision, they are referred 
     L2: Loss = Error(Y - \widehat{Y}) +  \lambda \sum_1^n w_i^{2}
 \end{equation}
 
-\subsection{Tools of Trade}
+\subsection{Tools of Trade}\label{subsec:tools-of-trade}
+
 \subsubsection{Receiver Operating Characteristic (ROC):}\hspace*{\fill} \\
 Receiver operating characteristics (ROC) graphs are useful for organising classifiers and visualising their performance. ROC graphs are commonly used in medical decision making, and in recent years have been used increasingly in machine learning and data mining research. Although ROC graphs are apparently simple, there are some common misconceptions and pitfalls when using them in practice. The purpose of this article is to serve as an introduction to ROC graphs and as a guide for using them in research. \cite{FAWCETT2006861}
 
@@ -190,3 +197,7 @@ in case of imbalanced dataset, only accuracy as metric is not suitable. As even 
 \end{equation}
 
 AUC is calculated as the Area Under the \textbf{Sensitivity` (TPR)- (1-Specificity)(FPR)} Curve.
+
+
+\subsection{Used Technologies}\label{subsec:used-technologies}
+\mytodo{describe the used libraries  and table}
