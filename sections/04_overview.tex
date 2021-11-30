@@ -167,12 +167,24 @@ A confusion matrix is a tool to visualise the performance of the classifier in a
 
 
 \begin{table}[]
-    \centering
-    \noindent
 
-    \renewcommand\arraystretch{1.5}
-    \setlength\tabcolsep{0pt}
-    
+    % need the pifont package
+    \begin{tabular}{l|l|>{\columncolor{gray!20}}l|l|l}
+    %\begin{tabular}{l|l|l|l|l}
+    \multicolumn{2}{c}{}&\multicolumn{2}{c}{True diagnosis}&\\
+    \cline{3-4}
+    \multicolumn{2}{c|}{}&\multicolumn{1}{c|}{Positive}&\multicolumn{1}{c|}{Negative}&\multicolu    mn{1}{c}{}\\
+    %\cline{2-4}
+    \hhline{~|---}
+    \multirow{2}{*}{Screening test}& Positive & TP & FP ($\alpha$) &\ding{214} PPV\\
+    %\cline{2-4}
+    \hhline{~|---}
+    & Negative & FN ($\beta$) & TN & \ding{214} NPV\\
+    %\cline{2-4}
+    \hhline{~|---}
+    \multicolumn{1}{c}{} & \multicolumn{1}{c}{} &
+    \multicolumn{1}{c}{\multirow{2}{*}{\parbox{2em}{\vskip1ex\ding{215}\\ Se}}} & \multicolumn{1}{c}{\multirow{2}{*}{\parbox{2em}{\vskip1ex\ding{215}\\ Sp}}} &\multicolumn{1}{c}{}\\
+    \end{tabular}
     
     
     \caption{Confusion Matrix}
