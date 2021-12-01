@@ -1,7 +1,7 @@
 To implement The data driven machine learning technique detect suspicious companies to prevent trade credit fraud, below system design was used. The design is broadly broken down into main three components. These are Data Mining, Model Configuration, and Model selection. In below sections each of the components are described. 
 
 
-\begin{figure}[h]
+\begin{figure}[htp]
     \centering
     \begin{tikzpicture}[font=\small,thick]
 
@@ -79,32 +79,34 @@ After the features extraction feature engineering is done to generate features b
 below pseudo code structure [Algorithm :\ref{alg:feature}]is used to engineer features from extracted data . 
 
 \begin{algorithm}
-\caption{Feature Engineering}
-\label{alg:feature}
-\SetKwProg{feature}{Function \emph{feature}}{}{end}
+    \caption{Feature Engineering}
+    \label{alg:features}
 
-    \feature{(Company Object)}{
-        \textbf{Input:}{ company information in JSON formal} \\
-        \textbf{Output:}{ feature value (int - flag, float for continues variable}
-  
-        \State {$feature\_counter \gets 0$ \CommentSty{Initialise the counter}} \\
-        
-        \If{ $report\_date$ is available}{
-              $important\_date$ = $report\_date$\;
-          }
-        \Else{}{\Return $feature\_counter$}
-         
-        \State {$json\_expression$ \= parse JSON to get feature information} \\
-        \State{$list \gets$ value from $json\_expression$ }\\
-       \\
-        \ForAll{child $c$ in list}{
-            \If{$important\_date \leq child['date']$ }{
-                    $feature\_counter$ ++
-                }
+    \SetKwProg{feature}{Function \emph{feature}}{}{end}
+    
+        \feature{(Company Object)}{
+            \textbf{Input:}{ company information in JSON formal} \\
+            \textbf{Output:}{ feature value (int - flag, float for continues variable}
+      
+            \State {$feature\_counter \gets 0$ \CommentSty{Initialise the counter}} \\
+            
+            \If{ $report\_date$ is available}{
+                  $important\_date$ = $report\_date$\;
+              }
+            \Else{}{\Return $feature\_counter$}
              
+            \State {$json\_expression$ \= parse JSON to get feature information} \\
+            \State{$list \gets$ value from $json\_expression$ }\\
+           \\
+            \ForAll{child $c$ in list}{
+                \If{$important\_date \leq child['date']$ }{
+                        $feature\_counter$ ++
+                    }
+                 
+            }
+            \Return $feature\_counter$\\
         }
-        \Return $feature\_counter$\\
-    }
+
 \end{algorithm}
 
 
