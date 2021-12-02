@@ -1,3 +1,8 @@
+
+Data extracted is a useful method to gather data for analysing and prediction tasks. Data driven is a method base on the history data to build more hyper-parameters to compensate the un-measurable features within the measurable data \cite{SMARRA20181252}. some extending nonlinear features to build the prediction function. In classification and prediction problem, it is essential to discover the pattern of the data and provide us some insights to take some actions according to the prediction results. Random Forest algorithm and Neural Networks are been used in handling this problem and shown effective~\cite{10.1145/3414274.3414278, RB2021}. However it is extremely hard to identify the target information from institutions data based on pattern. The propose of the paper is to find a suitable classifier and its application to find fraudulent cases based on assembly learning and machine learning .
+
+\mytodo{update this text}
+
 To implement The data driven machine learning technique detect suspicious companies to prevent trade credit fraud, below system design was used. The design is broadly broken down into main three components. These are Data Mining, Model Configuration, and Model selection. In below sections each of the components are described. 
 
 
@@ -175,6 +180,38 @@ Random forest algorithm generally performs better compare with other classificat
 
 In our random forest,we set tree number to 200. We also use grid search method to set some ratio of the class weights and other related parameters to select the most suitable one with the highest accuracy. For example,the class weight selection process is shown in Fig.2. As the figure shows, when our weights equals to the ratio of 1:1 and 1:2, our accuracy perform best. Therefore, we set the class weight as 1:1 in the experiment.Also there are some other parameters we will not enumerate here but the process are the same. \mytodo{text needs to be updated}
 
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=\linewidth]{}
+    \begin{forest}
+      for tree={l sep=3em, s sep=3em, anchor=center, inner sep=0.7em, fill=blue!50, circle, where level=2{no edge}{}}
+      [
+      Training Data, node box
+      [sample and feature bagging, node box, alias=bagging, above=4em
+      [,red!70,alias=a1[[,alias=a2][]][,red!70,edge label={node[above=1ex,red arrow]{}}[[][]][,red!70,edge label={node[above=1ex,red arrow]{}}[,red!70,edge label={node[below=1ex,red arrow]{}}][,alias=a3]]]]
+      [,red!70,alias=b1[,red!70,edge label={node[below=1ex,red arrow]{}}[[,alias=b2][]][,red!70,edge label={node[above=1ex,red arrow]{}}]][[][[][,alias=b3]]]]
+      [~~$\dots$~,scale=2,no edge,fill=none,yshift=-4em]
+      [,red!70,alias=c1[[,alias=c2][]][,red!70,edge label={node[above=1ex,red arrow]{}}[,red!70,edge label={node[above=1ex,red arrow]{}}[,alias=c3][,red!70,edge label={node[above=1ex,red arrow]{}}]][,alias=c4]]]]
+      ]
+      \node[tree box, fit=(a1)(a2)(a3)](t1){};
+      \node[tree box, fit=(b1)(b2)(b3)](t2){};
+      \node[tree box, fit=(c1)(c2)(c3)(c4)](tn){};
+      \node[below right=0.5em, inner sep=0pt] at (t1.north west) {Tree 1};
+      \node[below right=0.5em, inner sep=0pt] at (t2.north west) {Tree 2};
+      \node[below right=0.5em, inner sep=0pt] at (tn.north west) {Tree $n$};
+      \path (t1.south west)--(tn.south east) node[midway,below=4em, node box] (mean) {mean in regression or majority vote in classification};
+      \node[below=3em of mean, node box] (pred) {prediction};
+      \draw[black arrow={5mm}{4mm}] (bagging) -- (t1.north);
+      \draw[black arrow] (bagging) -- (t2.north);
+      \draw[black arrow={5mm}{4mm}] (bagging) -- (tn.north);
+      \draw[black arrow={5mm}{5mm}] (t1.south) -- (mean);
+      \draw[black arrow] (t2.south) -- (mean);
+      \draw[black arrow={5mm}{5mm}] (tn.south) -- (mean);
+      \draw[black arrow] (mean) -- (pred);
+    \end{forest}
+    \caption{Random Forest}
+    \label{fig:rand_forst_graph}
+\end{figure}
 
 
 \textbf{Hyper-parameter tuning:}

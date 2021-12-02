@@ -1,15 +1,17 @@
 % This section includes some motivations behind the work, explicitly or implicitly highlights the research question , provides a high-level explanation of the solution, and describes the contributions.
 
 % establish the context, background and/or importance of the topic
-In the current global economy, the financial fraud has become a crucial issue especially for the trade sector. In recent times, the number of fraud cases have increased drastically which effected both financial institutions and their clients significantly. From a survey in 2020 on economic crime and fraud by Price Waterhouse Coopers, its been reported that more than 42 billion USD of financial losses happened in past 24 months~\cite{PwC.Crime.Survey}. On an average companies reportedly experienced 6 fraud cases during this period. Thirty five percent of fraud cases are marked as Customer fraud~\cite{PwC.Crime.Survey}.   
-
-In current trend, more and more, companies outsource non-core activities to third party companies to reduce operational costs. But these third party-party business partners can be fraught with risk. One in five respondents from the PwC survey~\cite{PwC.Crime.Survey} cited vendors/suppliers as the source of their most disruptive external fraud. On the other hand, suppliers are also in high risk of fraud cases from their buyers. Due to this detecting suspicious companies (buyers and suppliers) plays an important role to reduce financial losses for the trade insurance companies and theirs customers.
+Historically, financial crime and transaction fraud have been a major concern in the business sector in the global economy. The number of fraud cases has increased drastically in recent times, affecting both financial institutions and their clients significantly. It has been found, from a recent survey done by PriceWaterhouse Coopers on economic crime and fraud, that the reported financial losses occurred between 2018 to 2020 is more than 42 billion dollars~\cite{PwC.Crime.Survey}. From the participated 500 companies, it was calculated that On an average companies experienced 6 fraud cases during this period. Which refers that the actual number and amount of financial crime is way higher.   
 
 
+Thirty five percent of the reported fraud cases during the mentioned period, faced by businesses in different sectors are marked as customer (figure~\ref{fig:fraud_sector}). That means the majority of the financial crime faced by the business are done by their clients and business partners~\cite{PwC.Crime.Survey}. In recent trend to reduce operational cost and time, more and more, companies outsource non-core activities to third party companies. However, this cost saving activity imposes external fraud to the businesses from their party-party business partners and clients. On the flip side, suppliers and manufactures are in high risk of fraud cases from their clients and business partners. 
+
+
+Hence, this is vital for the business to introduce a defence mechanism to prevent financial losses from external sources by applying internal process and system to detect suspicious clients and business partners. 
 
 % brief synopsis of the relevant literature
-Fraud or extortion is a par of internal threats for any business. Manufacturers and service providers may face financial losses from fraudulent buyers. According to Association of Certified Fraud Examiners ACFE, the definition of fraud is \"the use of one’s occupation for personal enrichment through the misuse or deliberate
-misapplication of the resources or assets of the employing organization~\cite{kassem_2014}. To term fraud that is imposes to manufactures and service provider it can be redefined as the personal gain of the buyers by misuse or deliberate misapplication of the products and services of the supplying organization and their respective insurance companies.
+% \subsection{What is Fraud?}
+Fraud or extortion is a par of internal threats for any business. Manufacturers and service providers may face financial losses from fraudulent buyers. According to the Association of Certified Fraud Examiners (ACFE), the definition of fraud is \"the use of one’s occupation for personal enrichment through the misuse or deliberate misapplication of the resources or assets of the employing organization\"~\cite{kassem_2014}.
 
 \begin{figure}[htp]
     \centering
@@ -19,27 +21,29 @@ misapplication of the resources or assets of the employing organization~\cite{ka
 \end{figure}
 % Indicate an issue, problem or controversy in the field of study
 
-A classical approach to prevent such fraudulent cases is done by traditional method of using human resources like internal and external auditors~\cite{kassem_2014}, and business team. Each team has their own process of monitoring external partners and buyers by analyzing transaction patterns, financial overview, historical behaviour to identify suspicious companies.  Based on the organizational capabilities, these team uses different internal and external resources like archival system, reports and news source.
 
 
-Historically, organizations and financial institutions are using different technological solutions and operational process to detect suspicious companies. In the technological solutions different software are used to verify names, previous history and financial status of the buyers. On the other hand, as part of operational process during the customer on-boarding the Know Your Customer KYC process are used to identify anomaly in the customer profile. However, the major problems for these existing solution to detect suspicious companies are complex, time consuming, costly,and cognitively challenging labour intensive task.
+A classical approach to preventing financial fraud by organizations is to incorporate operational processes to provide instructions to the employees for identifying anomalies and suspicious occurrences, which is then additionally governed by internal and external auditors. ~\cite{kassem_2014}. By following the operational processes, the employees try to find suspicious patterns through analyzing the transactions, financial statements, historical behaviour. 
 
 
-However, in recent past with the advancement of artificial intelligence and data mining techniques, different machine leaning solutions are developed to find anomalies, credit card fraud, etc.~\cite{RB2021, KIRKOS2007995}. Considering the complexity of the tasks the continuous improvement of the systems are going on. The incremental success of these solutions are showing a great promises to reduce operations time and cost for the organizations and financial institutions.
 
-Most studies in the field of suspicious activity classification for economical sector are done on Credit Card fraud detection. The recent number of individual and organized criminals the number of credit card has increased significantly ~\cite{RB2021}. Although lots of research has been carried out on detecting anomalies in financial crime, we can see that most of the researches for identifying suspicious financial crime activity are focused on detecting credit card fraud. However, as mentioned earlier, in the survey from PwC we have seen that third party business crime and fraud imposes high risk and have huge financial impact on the economy.
-% listing the reasarch question or hypotheses
+Organizations and financial institutions use different technical solutions incorporated with their operational processes to verify their customers, vendors and business partners. Organizations use tools like Know your Customer (KYC) for customer onboarding, Anti-money laundering (ALM) system for preventing financial crime, and internal reports for finding suspicious events. These processes are proven to be effective to detect suspicious events. However, the problems for these existing solutions are complex, time-consuming, costly, and cognitively challenging, and labour-intensive.
 
 
-This paper will focus on using a data-driven approach using machine learning techniques to detect suspicious companies to prevent financial losses for the organizations and respective financial institutions.  The major objective of this study is to use data mining technique to extract features from unstructured data, and apply ensemble learning and neural network to identify the pattern on the features to detect suspicious companies.
+In the recent past with the advancement of data mining and machine learning technique, different machine learning-based solutions for detecting financial fraud are proven to be handy. ~\cite{RB2021, KIRKOS2007995}. Combining the machine learning-based solution with the existing operational process can help the organization reduce task complexity, operational cost and human activity. 
+
+
+Although lots of research has been carried out on detecting anomalies in financial crime, we can see that most of the researches for identifying suspicious financial crime activity are focused on detecting credit card fraud by using machine learning techniques~\cite{RB2021}.  However, as mentioned earlier, in the survey on financial crime and fraud done by PwC, we have seen that third party business crime and fraud imposes high risk and have significant financial losses for the organizations.
+
+% listing the research question or hypotheses
+
+
+This paper will focus on using a data-driven approach using machine learning techniques to detect suspicious companies to prevent financial losses for the organizations and respective financial institutions. The main objective of this study is to use a data mining technique to extract features from unstructured data and apply ensemble learning and neural networks to identify the patterns on the engineered features to classify suspicious companies. 
 
 % provide synopsis of the research methols
 
 
 
-Data extracted is a useful method to gather data for analysing and prediction tasks. Data driven is a method base on the history data to build more hyper-parameters to compensate the un-measurable features within the measurable data \cite{SMARRA20181252}. some extending nonlinear features to build the prediction function. In classification and prediction problem, it is essential to discover the pattern of the data and provide us some insights to take some actions according to the prediction results. Random Forest algorithm and Neural Networks are been used in handling this problem and shown effective~\cite{10.1145/3414274.3414278, RB2021}. However it is extremely hard to identify the target information from institutions data based on pattern. The propose of the paper is to find a suitable classifier and its application to find fraudulent cases based on assembly learning and machine learning .
-
-\mytodo{update this text}
 
 
 
