@@ -2,14 +2,19 @@
 \begin{tabular}{lcc} 
 Model: Model\_1 \\ \hline 
  Layer (type)                  & Output Shape                & Param \#    \\ \hline \hline 
- dense (Dense)                 & (None, 27)                  & 756        \\ \hline 
- dense\_1 (Dense)               & (None, 15)                  & 420        \\ \hline 
- dense\_2 (Dense)               & (None, 1)                   & 16         \\ \hline 
-& & \\ \hline \hline 
-Total params: 1,192 \\ 
-Trainable params: 1,192 \\ 
-Non-trainable params: 0 \\ \hline 
+ dense (Dense)                 & (None, 256)                 & 7168       \\ \hline 
+ batch\_normalization (BatchNor &  (None, 256)                & 1024       \\ \hline 
+
+ ormalization)                 &                             &            \\ \hline 
+ dropout\_1 (Dropout)           & (None, 256)                 & 0          \\ \hline 
+ dense\_2 (Dense)               & (None, 256)                 & 65792      \\ \hline 
+ batch\_normalization\_2 (BatchN &  (None, 256)                & 1024       \\ \hline 
+
+                               &                             &            \\ \hline \hline 
+Total params: 142,081 \\ 
+Trainable params: 140,545 \\ 
+Non-trainable params: 1,536 \\ \hline 
 \end{tabular} 
-\caption{Model summary for Model\_1.} 
+\caption{Model summary for ANN Model.} 
 \label{tab:model-summary} 
 \end{table}

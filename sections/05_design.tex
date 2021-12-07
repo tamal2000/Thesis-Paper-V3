@@ -1,89 +1,84 @@
+Data extracted is a method to gather data for analysing and predicting tasks. Data-driven is a method based on which features can be extracted from the historical data to~\cite{SMARRA20181252}. In classification and prediction problems, it is essential to discover the pattern of the data to get insights. Ensemble learning algorithms and Neural Networks are been found effective~\cite{10.1145/3414274.3414278, RB2021} for real-world pattern detection. This is, however, extremely hard to identify the target information from institutions data and identify patterns to classify the problem. 
 
-Data extracted is a useful method to gather data for analysing and prediction tasks. Data driven is a method base on the history data to build more hyper-parameters to compensate the un-measurable features within the measurable data \cite{SMARRA20181252}. some extending nonlinear features to build the prediction function. In classification and prediction problem, it is essential to discover the pattern of the data and provide us some insights to take some actions according to the prediction results. Random Forest algorithm and Neural Networks are been used in handling this problem and shown effective~\cite{10.1145/3414274.3414278, RB2021}. However it is extremely hard to identify the target information from institutions data based on pattern. The propose of the paper is to find a suitable classifier and its application to find fraudulent cases based on assembly learning and machine learning .
+The purpose of the chapter is to extract information from a historical dataset and find a suitable classifier for anomaly detection. 
 
-\mytodo{update this text}
 
-To implement The data driven machine learning technique detect suspicious companies to prevent trade credit fraud, below system design was used. The design is broadly broken down into main three components. These are Data Mining, Model Configuration, and Model selection. In below sections each of the components are described. 
 
+To implement The data-driven machine learning technique that detects suspicious companies to prevent trade-credit fraud, the below system design was used. The design is broadly broken down into main three components. These are Data Mining, Model Configuration, and Model selection. In the below sections each of the components is described. 
 
 \begin{figure}[htp]
-    \centering
-    \begin{tikzpicture}[font=\small,thick]
+    \begin{center} 
+    \usetikzlibrary{decorations.text} 
+    \newcommand*{\mytextstyle}{\sffamily\Large\bfseries\color{black!85}} 
+    \newcommand{\arcarrow}[8]{% 
+    % inner radius, middle radius, outer radius, start angle, 
+    % end angle, tip protusion angle, options, text 
+      \pgfmathsetmacro{\rin}{#1} 
+      \pgfmathsetmacro{\rmid}{#2} 
+      \pgfmathsetmacro{\rout}{#3} 
+      \pgfmathsetmacro{\astart}{#4} 
+      \pgfmathsetmacro{\aend}{#5} 
+      \pgfmathsetmacro{\atip}{#6} 
+      \fill[#7] (\astart+\atip:\rin) arc (\astart+\atip:\aend:\rin) 
+           -- (\aend-\atip:\rmid) 
+           -- (\aend:\rout) arc (\aend:\astart+\atip:\rout) 
+           -- (\astart:\rmid) -- cycle; 
+      \path[font = \sffamily, decoration = {text along path, text = {|\mytextstyle|#8}, 
+        text align = {align = center}, raise = -.8ex}, decorate] 
+        (\astart+\atip:\rmid) arc (\astart+\atip:\aend+\atip:\rmid); 
+    } 
+    
+    \definecolor{grau}{RGB}{208,208,208} 
+    \definecolor{mymagenta}{RGB}{226,0,116} 
 
-        % Start block
-        \node[draw,
-            rounded rectangle,
-            minimum width=1.5cm,
-            minimum height=1cm] (block1) {START};
-        
-            
-        % Voltage and Current Measurement
-        \node[draw,
-            trapezium, 
-            trapezium left angle = 65,
-            trapezium right angle = 115,
-            trapezium stretches,
-            below=of block1,
-            minimum width=2.5cm,
-            minimum height=1cm
-        ] (block2) {Data mining};
-        
-        \node[draw,
-            align=center,
-            below=of block2,
-            minimum width=2.5cm,
-            minimum height=1cm
-        ] (block3) {Building Model};
-        
-        
-        \node[draw,
-            diamond,
-            below=of block3,
-            minimum width=2.5cm,
-            inner sep=0] (block4) {Model Selection};
-        
-       
-        % Arrows
-        \draw[-latex] (block1) edge (block2)
-            (block2) edge (block3)
-            (block3) edge (block4);
-        
-        \end{tikzpicture}
-    \caption{Application Design}
-    \label{fig:my_label}
+        \begin{tikzpicture} 
+        \fill[even odd rule,mymagenta] circle (2.0); 
+        \node at (0,0) (PDCA) {\mytextstyle{\begin{tabular}{c}Development\\Cycle\end{tabular}}}; 
+          \arcarrow{3}{3.5}{4}{       0}{    90}{5}{grau,    very thick}{ Data Mining } 
+          \arcarrow{3}{3.5}{4}{   180}{   270}{5}{grau,    very thick}{ Feature Engineering } 
+          \arcarrow{3}{3.5}{4}{   270}{   360}{5}{grau,     very thick}{ Model Building } 
+          \arcarrow{3}{3.5}{4}{     90}{   180}{5}{grau   , very thick}{ Model Evaluation } 
+        \end{tikzpicture} 
+     \end{center} 
+    \caption{Model Development Cycle}
+    \label{fig:design}
 \end{figure}
-\mytodo{update the flowchart}
 
 \subsection{Data Mining}
-The most important aspect to train a complex system like is to feed adequate data set, so that model can perform well. However, the information required for preparing dataset is not readily available. In below sub sections the steps of Data mining is described. 
+The most vital aspect for training a complex system is to feed an adequate dataset, so that model can perform well. However, the information required for preparing a dataset is not readily available in this case.  The steps of data mining techniques are described below. 
+
+
 \subsubsection{Source Identification}\hspace*{\fill} \\
-The subject matter experts are the first point of contact to identify the source to identify the suspicious companies. It is important to understand how traditionally the auditors, credit under taking team analyse the data and identify the key indicators. In the end of the day fraudulent transaction or activity is a human behaviour, hence the experts in this field look for particular patterns and indicators to identify the suspicious entity. The pattern in the financial transaction and general activities of the company are monitored to identify the patters. Below repetitive steps are taken to identify each key indicators.
+The subject matter experts are the first point of contact to identify the sources to get the suspicious companies' information. It is important to understand how traditionally the auditors, credit undertaking team analyse the data and identify the key indicators. At the end of the day, fraudulent transaction or activity is human behaviour, hence the experts in this field look for particular patterns and indicators to identify the suspicious entity. The pattern in the financial transaction and general activities of the company are monitored to identify the patterns. Below repetitive steps are taken to identify each key indicator.
+
 
 \begin{enumerate}
     \item Make a comprehensive list of all possible indicators by taking notes from different subject matter experts. 
-    \item Identify if there is any human biases on selected indicators  
-    \item Determine if the identified variable is a binary (flag) or continues variable. 
+    \item Identify if there are any human biases on selected indicators  
+    \item Determine if the identified variable is a binary (flag) or continuous variable. 
     \item Identify the source of the data, i.e. internal source (financial statements, company profile) or external source. 
 \end{enumerate}
-\subsubsection{Data Extraction}\hspace*{\fill} \\
-The next activity to prepare the training data set is to extract data from historical company information. Based on the selected key indicators the combines sources are identified. For the current problem its been found that majority of the information are coming from company financial information kept is a Oracle database and historical company reports which are kept in Extensible Markup Language (xml) format. For data extraction step all the indicators for past 10 years have been taken from these sources. The extracted information is kept in MongoDB server where the information of each companies are kept. The financial information are fetched from existing oracle DB, however the vital company information are extracted from the XML and kept in a JSON \mytodo{cite} format for further uses. 
 
-\mytodo{Flow diagram needs to be added}
+
+\subsubsection{Data Extraction}\hspace*{\fill} \\
+The next activity to prepare the training data set is to extract data from historical company information. Based on the selected key indicators the combined sources are identified. For the current problem, it is been found that the majority of the information is coming from company financial information kept in an Oracle database and historical company reports which are kept in Extensible Markup Language (XML) format. For the data extraction step, all the indicators for the past 10 years have been taken from these sources. The extracted information is kept in the MongoDB server where the information of each company is kept. The financial information is fetched from existing oracle DB, however, the vital company information are extracted from the XML and kept in a JSON format for further uses. 
+
 
 \subsubsection{Feature Engineering}\hspace*{\fill} \\
-After the features extraction feature engineering is done to generate features based on the identified indicators. The engineered features are based on the financial information, company activities and recombination of the information. Due to sensitivity of the data, the details of the features are not mentioned. However below are the general overview of the feature engineering
+After the features extraction feature engineering is done to generate features based on the identified indicators. The engineered features are based on the financial information, company activities and recombination of the information. Due to the sensitivity of the data, the details of the features are not mentioned. However below are the general overview of the feature engineering
+
 
 \begin{itemize}
-    \item \textbf{Financial:} The historical and recent financial information of each company have been collected. This data shows the trend and pattern of the company over last 10 years. During features extraction the anomalies are flagged and converted into a binary variable. There are lots of floating points information like yearly profit are kept as continues variable. 
+    \item \textbf{Financial:} The historical and recent financial information of each company have been collected. This data shows the trend and pattern of the company over the last 10 years. During features extraction, the anomalies are flagged and converted into a binary variable. There are lots of floating points information like yearly profit are kept as a continuous variable. 
     
-    \item \textbf{Non Financial:} The non financial features are mainly based on the behavioural aspect of personal and the company. As the behavioural information is not easily transferable to features, the important activities and characteristics are marked and binary or continues variable. Information like trade sector, abnormal changes of company, vital dates, recent suspicious transactions etc. are engineered as features.
+    \item \textbf{Non-Financial :} The non-financial features are mainly based on the behavioural aspect of personal and the company. As behavioural information is not easily transferable to features, the important activities and characteristics are marked and binary or continuous variables. Information like trade sector, abnormal changes of company, vital dates, recent suspicious transactions etc. are engineered as features.
     
-    \item \textbf{Combination:} It was noticed that some of the useful additional features can be mined using the combination method. In a combination method new feature can be created combining two or more financial or non financial features by using logical or mathematical process. For example a new marker can be created to find the ratio of number of employees and overall financial turnover of the company. 
+    \item \textbf{Combination:} It was noticed that some of the useful additional features can be mined using the combination method. In a combination method, the new feature can be created combining two or more financial or non-financial features by using logical or mathematical processes. 
 \end{itemize}
 
-below pseudo code structure [Algorithm :\ref{alg:feature}]is used to engineer features from extracted data . 
+The pseudo-code structure [Algorithm :\ref{alg:features}] is used to engineer features from extracted data. 
 
-\begin{algorithm}
+\begin{algorithm}[h]
     \caption{Feature Engineering}
     \label{alg:features}
 
@@ -115,55 +110,7 @@ below pseudo code structure [Algorithm :\ref{alg:feature}]is used to engineer fe
 \end{algorithm}
 
 
-\subsubsection{Exploratory data analysis}\hspace*{\fill} \\
 
-From the feature extraction and feature engineering stage we get the full data set. To prepare the dataset total last 10 years of data for all companies (having \mytodo{cla} date) are selected. Due to time complexity for data extraction and keep to understand only recent trend last 10 years data is considered. In the data set we can see the there are total 30 columns, however the number of features are 27. The total number of features are 48,549. Among this data only 1358 are marked fraudulent or suspicious company. The actual data is around 100k during this period. However to keep the data mining time low, the dataset size kept to 48,549. From the paper on SMOTE \cite{}, we have seen the under sampling with SMOTE performs re lately well. So theoretically the performance will still get improvement.
-\begin{itemize}
-    \item Total number of columns: 30
-    \item Number of company entries: 48,539
-    \item Target label: Fraudulent
-    \item Total Features: 27
-    \item Total Fraudulent / suspicious: 1358
-\end{itemize}
-
-From the initial assessment we can see the that classes are very imbalanced. In the dataset there is only 1358 fraudulent cases out of 48,549 ones. That means only 2.8\% of companies are fraudulent or specious. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.8\linewidth]{figures/class_imbalance.png}
-    \caption{Class Distribution}
-    \label{fig:class distribution}
-\end{figure}
-
-The complexity to build a model to detect a huge obstacle. In the features \ref{fig:Dimension reduction}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{figures/pca_2d.png}
-    \caption{Dimension reduction}
-    \label{fig:Dimension reduction}
-\end{figure}
-The proportion of the fraudulent cases is shown in figure \ref{fig:feature proportion}. 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{figures/feature_proportion.png}
-    \caption{Proportion of binary features}
-    \label{fig:feature proportion}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{figures/corr.png}
-    \caption{Correlation Matrix}
-    \label{fig:corr}
-\end{figure}
-
-\subsubsection{Dataset Finalisation}\hspace*{\fill} \\
-Finally the dataset has been segmented into train and test sets. From the
-\begin{itemize}
-    \item \textbf{Train and test split:}
-    \item \textbf{Data Pre-processing:}
-    \item \textbf{Handle class Imbalance:}
-\end{itemize}
 
 \subsection{Model configuration}
 
@@ -178,48 +125,13 @@ Random forest algorithm generally performs better compare with other classificat
     \item The final class prediction done by majority vote. 
 \end{enumerate}
 
-In our random forest,we set tree number to 200. We also use grid search method to set some ratio of the class weights and other related parameters to select the most suitable one with the highest accuracy. For example,the class weight selection process is shown in Fig.2. As the figure shows, when our weights equals to the ratio of 1:1 and 1:2, our accuracy perform best. Therefore, we set the class weight as 1:1 in the experiment.Also there are some other parameters we will not enumerate here but the process are the same. \mytodo{text needs to be updated}
-
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=\linewidth]{}
-    \begin{forest}
-      for tree={l sep=3em, s sep=3em, anchor=center, inner sep=0.7em, fill=blue!50, circle, where level=2{no edge}{}}
-      [
-      Training Data, node box
-      [sample and feature bagging, node box, alias=bagging, above=4em
-      [,red!70,alias=a1[[,alias=a2][]][,red!70,edge label={node[above=1ex,red arrow]{}}[[][]][,red!70,edge label={node[above=1ex,red arrow]{}}[,red!70,edge label={node[below=1ex,red arrow]{}}][,alias=a3]]]]
-      [,red!70,alias=b1[,red!70,edge label={node[below=1ex,red arrow]{}}[[,alias=b2][]][,red!70,edge label={node[above=1ex,red arrow]{}}]][[][[][,alias=b3]]]]
-      [~~$\dots$~,scale=2,no edge,fill=none,yshift=-4em]
-      [,red!70,alias=c1[[,alias=c2][]][,red!70,edge label={node[above=1ex,red arrow]{}}[,red!70,edge label={node[above=1ex,red arrow]{}}[,alias=c3][,red!70,edge label={node[above=1ex,red arrow]{}}]][,alias=c4]]]]
-      ]
-      \node[tree box, fit=(a1)(a2)(a3)](t1){};
-      \node[tree box, fit=(b1)(b2)(b3)](t2){};
-      \node[tree box, fit=(c1)(c2)(c3)(c4)](tn){};
-      \node[below right=0.5em, inner sep=0pt] at (t1.north west) {Tree 1};
-      \node[below right=0.5em, inner sep=0pt] at (t2.north west) {Tree 2};
-      \node[below right=0.5em, inner sep=0pt] at (tn.north west) {Tree $n$};
-      \path (t1.south west)--(tn.south east) node[midway,below=4em, node box] (mean) {mean in regression or majority vote in classification};
-      \node[below=3em of mean, node box] (pred) {prediction};
-      \draw[black arrow={5mm}{4mm}] (bagging) -- (t1.north);
-      \draw[black arrow] (bagging) -- (t2.north);
-      \draw[black arrow={5mm}{4mm}] (bagging) -- (tn.north);
-      \draw[black arrow={5mm}{5mm}] (t1.south) -- (mean);
-      \draw[black arrow] (t2.south) -- (mean);
-      \draw[black arrow={5mm}{5mm}] (tn.south) -- (mean);
-      \draw[black arrow] (mean) -- (pred);
-    \end{forest}
-    \caption{Random Forest}
-    \label{fig:rand_forst_graph}
-\end{figure}
-
-
 \textbf{Hyper-parameter tuning:}
-Random Forest classifiers comes with crucial parameters which needs to be tuned to get the best model. Below parameters are used in a random grid search method to do hyper parameter tuning for the random forest estimator. The options for each estimators are shown in the table: ~\ref{tab:RF_param}.
+Random Forest classifiers come with crucial parameters which need to be tuned to get the best model. Below parameters are used in a random grid search method to do hyperparameter tuning for the random forest estimator. The options for each estimator are shown in the table: ~\ref{tab:RF_param}.
+
 \begin{itemize}
     \item n\_estimator: Number of trees in random forest
     \item max\_features: Number of features to consider at every split
-    \item max\_depth: Maximum number of levels in tree
+    \item max\_depth: Maximum number of levels in a tree
     \item min\_samples\_split: Minimum number of samples required to split a node
     \item min\_sample\_leaf: Minimum number of samples required at each leaf node
     \item bootstrap: Method of selecting samples for training each tree
@@ -240,20 +152,25 @@ Random Forest classifiers comes with crucial parameters which needs to be tuned 
 \end{table}
 
 
-\subsubsection{XDBoost}\hspace*{\fill} \\
-\mytodo{Details of  XDBoost}
-\subsubsection{Artificial Neural Network (ANN)}\hspace*{\fill} \\
-\mytodo{Write the configuration of Neural network used}
+\subsubsection{XGBoost}\hspace*{\fill} \\
+Tree boosting is also effective ensemble learning learning method~\cite{2016}. XGBoost is used widely by data scientists to achieve state-of-the-art results on many machine learning challenges.To apply XGBoost model we have use below parameters. 
 
+By n\_estimator parameter can be selected based on the performance of the initial run. To optimize max\_depth parameter the depth search started from 3 to 10 by gradually increasing. To avoid overfitting learning rate parameter comes in handy for the XGBoost Algorithm. The subsample is for each tree percentage of rows are taken to build the tree. The colsample\_bytree is used by each tree to select the proportion of the column. Below are the details of the parameter tuning for XGBoost. 
+
+\begin{itemize}
+    \item learning\_rate: 0.01
+    \item n\_estimators: 100 to 1000 range 
+    \item max\_depth: 3 to 10 
+    \item subsample: 05. to 0.8
+    \item colsample\_bytree: 1
+    \item gamma: 1 
+\end{itemize}
+
+\subsubsection{Artificial Neural Network (ANN)}\hspace*{\fill} \\
+The configuration of neural networks is of of the toughest part of applying neural networks. There are different types of neural networks are available for classification problems. Considering the existing dataset a fully connected 10 layers neural network is used. Below is the configuration of the neural network built for the given tasks.  
 
 \input{results/Model_1.tex}
 
+After trying with different shapes and sizes of the network, it was found that 10 layers work the best for the given dataset. Relu activation functions are used in the dense and sigmoid aviation for the output layer are used. To overfitting, the model dropout parameter is used, however, it is been found that L1 and L2 regulators do not perform well in this scenario. 
 
-\subsection{Method of Selection}
-\mytodo{model selection hint\: https://medium.com/@matteding/imbalanced-data-fraud-detection-3185c1cdaa77}
-\subsubsection{Confusion Matrix}\hspace*{\fill} \\
-\mytodo{write how candonfusion matrix is used for model selection}
-\subsubsection{AUC ROC}\hspace*{\fill} \\
-\mytodo{how AUC ROC metrics are used}
-\subsubsection{Threshold value}\hspace*{\fill} \\
-\mytodo{Use of Threshold value to improve the model}
+
