@@ -79,22 +79,32 @@ A good visualization tool to understand the relation between classes and feature
     \label{fig:corr}
 \end{figure}
 
-\subsection{Model Performance}
+\subsection{Model Performance Results}\label{sec: model results}
+
+To select the right classifier, it is important to verify the performance of each model by using all types of performance matrices. For this paper to select we will use the mentioned method in the section Tools of trades in the Design Overview section. The below subsections provide the performance of each model in different matrices. 
+
+
+There is a total of six models we have selected for comparison. We have random foreset, XGBoost, and artificial neural networks models and their variation with SMOTE. 
+
+\subsubsection{Performance Metrics:}\hspace*{\fill} \\
+In the table~\ref{tab:per_res} the performance results of Random Forest, XGBoost, and Artificial Natural networks are shown. Each model has with and without SMOTE version. Each models performance results are shown in the respective rows. The columns show, accuracy, precision, recall and f1-score for each respective model over the test dataset. 
 \begin{table}[H]
-\begin{tabular}{clrrrr}
-\cline{2-6}
-\multicolumn{1}{l}{SMOTE} & Model         & \multicolumn{1}{l}{Accuracy} & \multicolumn{1}{l}{Precision} & \multicolumn{1}{l}{Recall} & F1 \\ \cline{2-6} 
-\multirow{3}{*}{No}       & Random Forest &0.97  & 0.42  & 0.07  & 0.11 \\
-                          & XGBoost       &0.97  & 0.44  & 0.03  & 0.06 \\
-                          & ANN           &0.97  & 0.30  & 0.10  & 0.15 \\ \cline{2-6} 
-\multirow{3}{*}{Yes}       & Random Forest &0.88  & 0.11  & 0.47  & 0.17 \\
-                          & XGBoost       &0.88  & 0.10  & 0.47  & 0.17 \\
-                          & ANN           &0.86  & 0.09  & 0.46  & 0.15 \\ \cline{2-6} 
-\end{tabular}
-\label{tab:performance_test_set}
-\caption{Test Data performance}
+    \begin{tabular}{clrrrr}
+    \cline{1-6}
+    \multicolumn{1}{l}{SMOTE} & Model         & \multicolumn{1}{l}{Accuracy} & \multicolumn{1}{l}{Precision} & \multicolumn{1}{l}{Recall} & F1 \\ \cline{1-6} 
+    \multirow{3}{*}{No}       & Random Forest &0.97  & 0.42  & 0.07  & 0.11 \\
+                              & XGBoost       &0.97  & 0.44  & 0.03  & 0.06 \\
+                              & ANN           &0.97  & 0.30  & 0.10  & 0.15 \\ \cline{1-6} 
+    \multirow{3}{*}{Yes}       & Random Forest &0.88  & 0.11  & 0.47  & 0.17 \\
+                              & XGBoost       &0.88  & 0.10  & 0.47  & 0.17 \\
+                              & ANN           &0.86  & 0.09  & 0.46  & 0.15 \\ \cline{1-6} 
+    \end{tabular}
+    \caption{Test Data performance}
+    \label{tab:per_res}
 \end{table}
 
+
+The figure~\ref{fig:test_train} shows the performance results of each model in bar charts. The columns show the f1-performance results of each model. The bars are clustered into performance results of train and test datasets. 
 
 \begin{figure}[H]
     \centering
@@ -104,34 +114,27 @@ A good visualization tool to understand the relation between classes and feature
 \end{figure}
 
 \subsubsection{ROC curve}\hspace*{\fill} \\
-cm
-\begin{figure}[H]
+Figure~\ref {fig:roc_all} shows the ORC curves of all the models in a single place. The x-axis indicates the false positive rate, and the y-axis indicates the true positive rate. The ROC curves are placed together in this figure for visual comparison. 
+\begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{figures/roc_res.PNG}
     \caption{ROC Curves}
-    \label{fig:my_label}
+    \label{fig:roc_all}
 \end{figure}
 
-\begin{figure}[H]
+In the figure~\ref{fig:roc_all_2} ROC curves are displayed in comparison with no skill classifiers. This gives a visual demonstration of the area under the curve. 
+\begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{figures/roc_res_full.PNG}
     \caption{ROC Curves compare to no skill model}
-    \label{fig:my_label}
+    \label{fig:roc_all_2}
 \end{figure}
 
 
 % \mytodo{model selection hint\: %https://medium.com/@matteding/imbalanced-data-fraud-detection-3185c1cdaa77}
-\subsubsection{Confusion Matrix}\hspace*{\fill} \\
-cm
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{figures/cm.PNG}
-    \caption{Caption}
-    \label{fig:my_label}
-\end{figure}
 
 \subsubsection{AUC ROC}\hspace*{\fill} \\
-auc 
+AUC ROC Curve means the area under the ROC curve. The AUC ROC values for each model is shown in the table~\ref{tab: roc_auc}. The values help us to choose the best model when it's difficult to see from the ROC curve visually. 
 \begin{table}[H]
     \begin{tabular}{|l|l|}
     \hline
@@ -148,5 +151,16 @@ auc
     \label{tab: roc_auc}
 \end{table}
 
+
+\subsubsection{Confusion Matrix}\hspace*{\fill} \\
+In the figure~\ref{fig:cm_rf} the performance of the random forest with SMOTE is shown in a form of a confusion matrix. In the matrix predicted labels and trues labels are shown in a 2 by 2 matrix. The bottom right box shows the True positive cases on the other the top right shows the false-positive results on the test data. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/cm.PNG}
+    \caption{Confusion Matrix Random Forest}
+    \label{fig:cm_rf}
+\end{figure}
+
+
 \subsubsection{Threshold value}\hspace*{\fill} \\
-\mytodo{Use of Threshold value to improve the model}
+To verify the performance of the model is also important to see how the performance of the model works in the different thresholds. Figure~\ref{fig:cm_r} shows all the values of the random forest model. The thresholds values chosen for the model are 0.1, 0.15, 0.2, 0.25, 0.35, 0.4, 0.45 and 0.5. 

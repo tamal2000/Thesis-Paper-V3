@@ -1,0 +1,24 @@
+In this section, the discussion on the results presented in section~\ref{sec: Evaluation} is covered. The main discussion focuses on the performance comparison of each model. Based on section~\ref{sec: model results} of this report, the result discussion is covered. 
+
+\subsubsection{Performance Metrics}\hspace*{\fill} \\
+It is apparent from this table~\ref{tab:per_res} that accuracy for the models is not a suitable matrix. All the non SMOTE models got 97\% accuracy and for SMOTE models the accuracy varies from 86\% to 88\%. Considering the huge class imbalance we know even a naive model will give around 98\% accuracy. 
+
+The results of precision metrics drop significantly from non-SMOTE to SMOTE models. In SMOTE models XGBoost has the highest precision rate of 0.44 and the artificial neural network has the lost rate of 0.30. For SMOTE group, the Random Forest model has the heights precision value of 0.11, which is significantly lower than the values in the no Smote group.   
+
+The recall is a good matrix for imbalanced data set like this. In the table~\ref{tab:per_res} we can see that the recall performance of the models' increases from SMOTE than non SMOTE group. Random Forest and XGBoost with SMOTE have a heights recall score of 0.47. 
+
+We see the f-1 score remain unchained for the artificial neural network. The f1-score improves significantly for XGBoost from 0.06 to 0.17 after SMOTE transformation. Random Forst with SMOTE also has a heights score of 0.17 which increase by .6 points. 
+
+
+In the figure~\ref{fig:test_train} we can see that as expected the performances of all the model drops from train set to test set. The random forest model has the highest value (more than 0.8) in the train set, however, the performance dramatically drops for the test data. Similarly, ANN performs well in the train set however the performance test drops but not as much as random forest. The XGBoost performs the worst in both train and test data. From this chart, we can see the XGBoost and Random Forest with SMOTE performs well in the test dataset. 
+
+
+\subsubsection{ROC Curves}\hspace*{\fill} \\
+The results of the ROC curves are shown in figure~\ref{fig:roc_all}and in figure~\ref{fig:roc_all_2}. ROC curves give the idea of how the model performs for True Positive (TF) and False Positive (FP) cases. The no skill line shows us the guideline for the comparison of the models. From the figures, we can see that Random Forest with SMOTE appears to have the best ROC curve. On the other hand, XGBoost which looked promising in the table ~\ref{tab:per_res} completely fails the ROC curve tests. We can see the results gradually increases till 0.2, however, then it hardly performs any better than no skill models. The rest of the models perform similar to each other. 
+
+
+\subsubsection{AUC ROC}\hspace*{\fill} \\
+From the ROC curve analysis, we already got the Idea that the Random Forest with SMOTE performs the best. However, besides the XGBoost with SMOTE, most of the models' performance looks similar. The rest of the models' seems to have a similar area like Random Forest, hence checking the area under the curve by AUC ROC metrics is a good way for this scenario. In table~\ref{tab: roc_auc} we can see that Random Forest with SMOTE has the highest ROC AUC score of 0.817. XGBoost with SMOTE has the lowest 0.549 which is just a little better than the no skill model. The rest of the models as found in the ROC analysis have similar ROC AUC values starting from 0.693 to 0.793.
+
+
+After analysing all the matrices we can say that the Random Forest with SMOTE performs the best among all the models. However, the overall performance of all the models is quite low. In the confusion matrix for our best model Random Forest with SMOTE, in the figure~\ref{fig:cm_rf}, we can see that only 213 suspicious cases were properly classified. The model fails to detect 164 cases and also gives a high false-positive case of 2999. After changing the threshold values, figure~\ref{fig:cm_rf_full} we can see that models tend to perform better, however, after the 0.4 threshold value, the models get a huge number of false positives. This is a clear indication that there is a scope of improvements. 
