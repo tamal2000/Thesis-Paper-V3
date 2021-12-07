@@ -1,17 +1,32 @@
 %Discuss the design of your experiments, the results you obtained,and how they help in evaluating the claims you made in the introduction. You may also use the evaluation results in this section to justify your design choices or assess the contributions of different aspects of your design towards the overall goals.
 
-\subsection{Exploratory data analysis}\hspace*{\fill} \\
+The result section of the report is divided into two parts. In the first part, the outcome of the data mining is shown under the section exploratory data analysis. In the second section performance of the models are noted down. 
 
-From the feature extraction and feature engineering stage we get the full data set. To prepare the dataset total last 10 years of data for all companies (having \mytodo{cla} date) are selected. Due to time complexity for data extraction and keep to understand only recent trend last 10 years data is considered. In the data set we can see the there are total 30 columns, however the number of features are 27. The total number of features are 48,549. Among this data only 1358 are marked fraudulent or suspicious company. The actual data is around 100k during this period. However to keep the data mining time low, the dataset size kept to 48,549. From the paper on SMOTE \cite{}, we have seen the under sampling with SMOTE performs re lately well. So theoretically the performance will still get improvement.
+\subsection{Exploratory data analysis}
+
+\subsubsection{Dataset}\hspace*{\fill} \\
+The data extraction method mentioned in the section~\ref{sec: Design} was followed to generate the dataset from the historical company information.
+
+To prepare this dataset, the historical data from 2011 to 2021 is considered. During the considered period, a company would generally have multiple status reports, however, to get the latest updates of each company the last report was considered. The reports are also filtered out based on the report type as not all reports would have all the required information. 
+
+The data extraction and feature engineering processes are very time-consuming. To make sure these processes run within an acceptable time and to support our design method, 25\% majority classes were not included while preparing the dataset. From the paper on SMOTE~\cite{2002}, we have seen the under-sampling with SMOTE performs relatively well. So theoretically the performance will still get improvement.
+
+In the generated dataset, there are a total of 30 columns available. Out of which three columns are report date, report id, these three columns were dropped before the training. However, these columns are used for identifying the company information after the training. 
+
+ 27 columns were selected as the features, the remaining one column contains the class information, which was used for the training label.  
+
+The total number of instances is 48,549. Among this data, only 1358 are marked suspicious companies. As mentioned earlier the actual data was filtered to avoid duplicated and inadequate reports. 
 \begin{itemize}
     \item Total number of columns: 30
     \item Number of company entries: 48,539
-    \item Target label: Fraudulent
+    \item Target label: Suspicious
     \item Total Features: 27
-    \item Total Fraudulent / suspicious: 1358
+    \item Total suspicious cases: 1358
 \end{itemize}
 
-From the initial assessment we can see the that classes are very imbalanced. In the dataset there is only 1358 fraudulent cases out of 48,549 ones. That means only 2.8\% of companies are fraudulent or specious. 
+
+\subsubsection{Class Distribution}\hspace*{\fill} \\
+From the initial assessment we can see the that classes are very imbalanced. In the dataset there is only 1358 fraudulent cases out of 48,549 ones. That means only 2.8\% of companies are fraudulent or specious [shown in figure~\ref{fig:class distribution}]. However as mentioned in the dataset section above, 25\% of majority class were under samples during the dataset preparation. That means the actual class distribution is much lower in reality. However to make a realistic model, we will consider this class distribution in the rest of the paper. 
 
 \begin{figure}[H]
     \centering
@@ -20,14 +35,21 @@ From the initial assessment we can see the that classes are very imbalanced. In 
     \label{fig:class distribution}
 \end{figure}
 
-The complexity to build a model to detect a huge obstacle. In the features \ref{fig:Dimension reduction}
+Even after the undersampling of the majority class, we can see from figure~\ref{fig:class distribution} that our dataset is highly imbalanced. Hence during the training of different models, we had to try different sampling methods to feed the model with a similar class distribution. In the model performance section with and without SMOTE is shown. 
+
+\subsubsection{Task complexity}\hspace*{\fill} \\
+From the class distribution, we can already assume that classifying suspicious classes would be extremely hard. To understand the complexity more, dimension reduction functions were applied to visualize the class distribution in a two-dimensional space. As we can find the figure~\ref{fig:Dimension reduction}, the classes cannot be easily separated. So the classes are not only imbalanced but also closely related. That means complexity to build a model to detect suspicious class would be a huge challenge.
+ 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{figures/pca_2d.png}
-    \caption{Dimension reduction}
+    \caption{Classes after Dimension reduction}
     \label{fig:Dimension reduction}
 \end{figure}
-The proportion of the fraudulent cases is shown in figure \ref{fig:feature proportion}. 
+
+
+\subsubsection{Class Proportion}\hspace*{\fill} \\
+ It is important to understand the effectiveness of the selected features. Theoretically, we want to select the features which have the indication of suspicious patterns. To do so, the proportion of the classes based on features were prepared. In the figure~\ref{fig:feature proportion} the proportion of the binary features are shown.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{figures/feature_proportion.png}
@@ -35,6 +57,21 @@ The proportion of the fraudulent cases is shown in figure \ref{fig:feature propo
     \label{fig:feature proportion}
 \end{figure}
 
+From the figure~\ref{fig:feature proportion} we can see that majority of the engineered features has a higher proportion of suspicious classes than regular classes. This is a good indication that the selected features may help the model classify the patterns. 
+
+
+For the continues variable statistical information like mean, median and standard deviation between two classes were considered to find the effectiveness of the features. The figure~\ref{fig:Continues Feature Statistics} shows the statistics of the continues variable features. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/feature_proportion_2.PNG}
+    \caption{Continues Feature Statistics}
+    \label{fig:Continues Feature Statistics}
+\end{figure}
+
+
+\subsubsection{Correlation Matrix}\hspace*{\fill} \\
+A good visualization tool to understand the relation between classes and features is the correlation matrix. In figure~\ref{fig:corr} we can visualize the relation between suspicious class and respective features. At a glance, we can see that the correlation between features and classes are very low. That is a good reference to understand the complexity of the tasks. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{figures/corr.png}
@@ -42,52 +79,74 @@ The proportion of the fraudulent cases is shown in figure \ref{fig:feature propo
     \label{fig:corr}
 \end{figure}
 
-\subsubsection{Dataset Finalisation}\hspace*{\fill} \\
-Finally the dataset has been segmented into train and test sets. From the
-\begin{itemize}
-    \item \textbf{Train and test split:}
-    \item \textbf{Data Pre-processing:}
-    \item \textbf{Handle class Imbalance:}
-\end{itemize}
-
-According to results shown in [] AUC values are stable or increased using class imbalanced and data driven method. 
-
-\mytodo{show figure for AUC curve}
-
-
-\begin{table}[h]
-\begin{tabular}{@{}|l|l|l|l|l|l|@{}}
-\toprule
-\textbf{PCA} & \textbf{SMOTE} & \textbf{Model} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} \\ \midrule
-\multirow{6}{*}{No}  & \multirow{3}{*}{No}  & \textbf{RF} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
-                     &                      & \textbf{XD} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
-                     &                      & \textbf{NN} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){2-6} 
-                     & \multirow{3}{*}{Yes} & \textbf{RF} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
-                     &                      & \textbf{XD} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
-                     &                      & \textbf{NN} & 0.0000 & 0.0000 & 0.0000 \\ \midrule
-\multirow{6}{*}{Yes} & \multirow{3}{*}{No}  & \textbf{RF} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
-                     &                      & \textbf{XD} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
-                     &                      & \textbf{NN} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){2-6} 
-                     & \multirow{3}{*}{Yes} & \textbf{RF} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
-                     &                      & \textbf{XD} & 0.0000 & 0.0000 & 0.0000 \\ \cmidrule(l){3-6} 
-                     &                      & \textbf{NN} & 0.0000 & 0.0000 & 0.0000 \\ \bottomrule
+\subsection{Model Performance}
+\begin{table}[H]
+\begin{tabular}{clrrrr}
+\cline{2-6}
+\multicolumn{1}{l}{SMOTE} & Model         & \multicolumn{1}{l}{Accuracy} & \multicolumn{1}{l}{Precision} & \multicolumn{1}{l}{Recall} & F1 \\ \cline{2-6} 
+\multirow{3}{*}{No}       & Random Forest &0.97  & 0.42  & 0.07  & 0.11 \\
+                          & XGBoost       &0.97  & 0.44  & 0.03  & 0.06 \\
+                          & ANN           &0.97  & 0.30  & 0.10  & 0.15 \\ \cline{2-6} 
+\multirow{3}{*}{Yes}       & Random Forest &0.88  & 0.11  & 0.47  & 0.17 \\
+                          & XGBoost       &0.88  & 0.10  & 0.47  & 0.17 \\
+                          & ANN           &0.86  & 0.09  & 0.46  & 0.15 \\ \cline{2-6} 
 \end{tabular}
-\caption{Model performance over test set}
-\label{tab:model performance}
-\end{table}
-
-\begin{table}
-    \include{results/model_results}
-    \caption{Demo results}
-    \label{tab:results}
+\label{tab:performance_test_set}
+\caption{Test Data performance}
 \end{table}
 
 
-\subsection{Method of Selection}
-\mytodo{model selection hint\: https://medium.com/@matteding/imbalanced-data-fraud-detection-3185c1cdaa77}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/results.PNG}
+    \caption{Performance over train and test data}
+    \label{fig:test_train}
+\end{figure}
+
+\subsubsection{ROC curve}\hspace*{\fill} \\
+cm
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/roc_res.PNG}
+    \caption{ROC Curves}
+    \label{fig:my_label}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/roc_res_full.PNG}
+    \caption{ROC Curves compare to no skill model}
+    \label{fig:my_label}
+\end{figure}
+
+
+% \mytodo{model selection hint\: %https://medium.com/@matteding/imbalanced-data-fraud-detection-3185c1cdaa77}
 \subsubsection{Confusion Matrix}\hspace*{\fill} \\
-\mytodo{write how candonfusion matrix is used for model selection}
+cm
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/cm.PNG}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
 \subsubsection{AUC ROC}\hspace*{\fill} \\
-\mytodo{how AUC ROC metrics are used}
+auc 
+\begin{table}[H]
+    \begin{tabular}{|l|l|}
+    \hline
+    MODEL     & ROC AUC \\ \hline
+    No Skill  & 0.500   \\ \hline
+    ANN       & 0.742   \\ \hline
+    RF        & 0.793   \\ \hline
+    XG        & 0.725   \\ \hline
+    ANN SMOTE & 0.693   \\ \hline
+    RF SMOTE  & 0.817   \\ \hline
+    XG SMOTE  & 0.549   \\ \hline
+    \end{tabular}
+    \caption{ROC AUC Values}
+    \label{tab: roc_auc}
+\end{table}
+
 \subsubsection{Threshold value}\hspace*{\fill} \\
 \mytodo{Use of Threshold value to improve the model}
